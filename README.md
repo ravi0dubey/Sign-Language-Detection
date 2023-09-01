@@ -30,7 +30,7 @@ Terraform </br>
 3. From YOLOV5 requirements.txt, copy its content into our project requirements.txt  and on top of it add addtional modules required for your project and at last add -e . which will be used by setup.py </br>
 4. setup.py file is created where we write statement so that signLanguage folder will behave as libraries </br>
 5. Exception and Logger module will handle exception and write log activities respectively</br>
-6. All common functionality like encode-decode image, reading/writing of yaml files are written in utils>main.py ss </br>
+6. All common functionality like encode-decode image, reading/writing of yaml files are written in utils>main.py  </br>
 7.  ss </br>
 8.   </br>
 
