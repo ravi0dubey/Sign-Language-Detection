@@ -2,21 +2,20 @@
 
 ## Problem Statement
 
+We need to build Sign language detection model where hand signs are detected by the model and it will tell if its "Please", "Thanks", "Help", "I love You, "Yes" or "No".
 
-The Air Pressure System(APS) is a critical component of a heavy-duty vehicle that uses compressed air to force a piston to provide pressure to the brake pads, slowing down the vehicle.
-It is a Binary Classification problem, in which the affirmative class indicates that the failure was caused by a certain component of the APS, while the negative class indicates that the failure was caused by something else.
 
 ## Solution Proposed
 
-In this project, the focus is to correctly predict the class of dataset to detemine the fault is due to APS or some other system.
-Goal is to reduce the cost due to unnecessary repairs. So it is required to minimize the false predictions
+In this project, the focus is to correctly detect the hand sign using YOLOV5 model
+
 
 ## Tech Stack Used
 Python </br>
 FastAPI </br>
-Machine learning algorithms </br>
+Yolov5 algorithms </br>
 Docker </br>
-MongoDB </br>
+
 
 ## Infrastructure Required.
 AWS S3 </br>
@@ -25,8 +24,20 @@ AWS ECR </br>
 Git Actions </br>
 Terraform </br>
 
-## How to run?
-Before we run the project, make sure that you are having MongoDB in your local system, with Compass since we are using MongoDB for data storage. You also need AWS account to access the service like S3, ECR and EC2 instances.
+## How project was build?
+1. Write template.py which create a folder structure of our project. Within each folders, it will create the filenames where we will be writing our code. </br>
+2. clone yolov5 github repo from git clone https://github.com/ultralytics/yolov5.git and delete its .git and .gitignore folder </br>
+3. ss </br>
+4. </br>
+
+
+
+## How to run?  
+1. conda create -n sign python=3.7 -y  </br>
+2. conda activate sign </br>
+3. pip install -r requirements.txt </br>
+4. python main.py </br>
+5. open in browser: http://localhost:8080/ </br>
 
 ## Data Collections
 ![image](https://github.com/ravi0dubey/Sensor-Fault-Detection/assets/38419795/fb8bb7d5-e34d-44dd-908e-0f9b429f94f8)
