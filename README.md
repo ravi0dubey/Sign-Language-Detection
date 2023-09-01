@@ -80,14 +80,9 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 
 ## Folder structure of Artifact which gets created on running Training Pipeline
 #### Data Ingestion
-![image](https://user-images.githubusercontent.com/38419795/226071961-d9678667-cf9e-4410-a9d4-6a4293f4ae1e.png)\n
+![image](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/143f79e9-3fe8-489a-adb1-c00bde7f4ea5)
+
 #### Data Validation 
-![image](https://user-images.githubusercontent.com/38419795/226494010-ac475551-5159-46ce-84c2-a3e2904e249b.png)
-
-![image](https://user-images.githubusercontent.com/38419795/226127381-6ddfd989-76e2-4087-86e8-c1cd0daa846b.png)
-
-#### Data Transformation
-![image](https://user-images.githubusercontent.com/38419795/227364255-1657eb48-628a-4c22-a073-1d21fa3c37c9.png)
 
 #### Model Trainer
 ![image](https://user-images.githubusercontent.com/38419795/228225084-3daabd37-dc7d-41c5-89a7-362516e59108.png)
