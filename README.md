@@ -26,9 +26,14 @@ Terraform </br>
 
 ## How project was build?
 1. Write template.py which create a folder structure of our project. Within each folders, it will create the filenames where we will be writing our code. </br>
-2. clone yolov5 github repo from git clone https://github.com/ultralytics/yolov5.git and delete its .git and .gitignore folder </br>
-3. ss </br>
-4. </br>
+2. Clone yolov5 github repo from git  using "clone https://github.com/ultralytics/yolov5.git" and delete its .git and .gitignore folder </br>
+3. From YOLOV5 requirements.txt, copy its content into our project requirements.txt  and on top of it add addtional modules required for your project and at last add -e . which will be used by setup.py </br>
+4. setup.py file is created where we write statement so that signLanguage folder will behave as libraries </br>
+5. </br>
+6.  ss </br>
+7.  ss </br>
+8.   </br>
+
 
 
 
