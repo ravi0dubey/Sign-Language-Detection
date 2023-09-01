@@ -33,7 +33,8 @@ Terraform </br>
 5. open in browser: http://localhost:8080/ </br>
 
 ## Data Collections
-https://github.com/ravi0dubey/Dataset/raw/main/Sign_language_data.zip
+
+Sign language annotated data is kept in github repository: https://github.com/ravi0dubey/Dataset/raw/main/Sign_language_data.zip
 
 ## Project Architecture
 ![image](https://github.com/ravi0dubey/Sensor-Fault-Detection/assets/38419795/e6776a8e-27b9-419e-ab7a-f435beee4e01)
