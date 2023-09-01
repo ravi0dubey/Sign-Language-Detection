@@ -24,6 +24,23 @@ AWS ECR </br>
 Git Actions </br>
 Terraform </br>
 
+
+## How to run?  
+1. conda create -n signLanguage python=3.7 -y  </br>
+2. conda activate signLanguage </br>
+3. pip install -r requirements.txt </br>
+4. python main.py </br>
+5. open in browser: http://localhost:8080/ </br>
+
+## Data Collections
+https://github.com/ravi0dubey/Dataset/raw/main/Sign_language_data.zip
+
+## Project Architecture
+![image](https://github.com/ravi0dubey/Sensor-Fault-Detection/assets/38419795/e6776a8e-27b9-419e-ab7a-f435beee4e01)
+
+## Deployment Architecture
+![image](https://github.com/ravi0dubey/Sensor-Fault-Detection/assets/38419795/637987ee-f192-4968-86b1-9bbc0ff7ddb0)
+
 ## How project was build?
 1. Write template.py which create a folder structure of our project. Within each folders, it will create the filenames where we will be writing our code. </br>
 2. Clone yolov5 github repo from git  using "clone https://github.com/ultralytics/yolov5.git" and delete its .git and .gitignore folder </br>
@@ -42,32 +59,14 @@ Terraform </br>
 10.    </br>
 11.   </br>
 
-
-
-
-## How to run?  
-1. conda create -n signLanguage python=3.7 -y  </br>
-2. conda activate signLanguage </br>
-3. pip install -r requirements.txt </br>
-4. python main.py </br>
-5. open in browser: http://localhost:8080/ </br>
-
-## Data Collections
-![image](https://github.com/ravi0dubey/Sensor-Fault-Detection/assets/38419795/fb8bb7d5-e34d-44dd-908e-0f9b429f94f8)
-
-## Project Architecture
-![image](https://github.com/ravi0dubey/Sensor-Fault-Detection/assets/38419795/e6776a8e-27b9-419e-ab7a-f435beee4e01)
-
-## Deployment Architecture
-![image](https://github.com/ravi0dubey/Sensor-Fault-Detection/assets/38419795/637987ee-f192-4968-86b1-9bbc0ff7ddb0)
-
-
 ## Approach while doing the coding
 ![image](https://user-images.githubusercontent.com/38419795/226114307-71505cd5-8bb4-44fb-b0e1-1e28a5b045ec.png)
 1. Define all constants used which will be used under constants folder
 2. In Entity folder we declare configuration and artifact of the component
 3. Train Pipeline uses both configuration and artifact of the component
 4. Components like data ingestion, data validation etc. will be declared which will be used by pipeline
+
+
 
 
 ## Training Pipeline
