@@ -72,7 +72,7 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 
 
 ## Training Pipeline
-![image](https://user-images.githubusercontent.com/38419795/225762823-2756c612-b41e-4418-9e86-b94c81f10252.png)
+
 
 ## Data Ingestion pipeline
 ![Data Ingestion](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/b9ba1b27-9268-4f20-95f3-2b38dc4f6154)
