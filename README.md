@@ -32,7 +32,7 @@ Terraform </br>
 4. python main.py </br>
 5. open in browser: http://localhost:8080/ </br>
 
-## Data Collections
+## Data Storage
 
 Sign language annotated data is kept in github repository: https://github.com/ravi0dubey/Dataset/raw/main/Sign_language_data.zip
 
@@ -40,7 +40,8 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 ![image](https://github.com/ravi0dubey/Sensor-Fault-Detection/assets/38419795/e6776a8e-27b9-419e-ab7a-f435beee4e01)
 
 ## Deployment Architecture
-![image](https://github.com/ravi0dubey/Sensor-Fault-Detection/assets/38419795/637987ee-f192-4968-86b1-9bbc0ff7ddb0)
+![deployment](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/19351f34-e3d7-4e98-967c-656075a9a87a)
+
 
 ## How project was build?
 1. Write template.py which create a folder structure of our project. Within each folders, it will create the filenames where we will be writing our code. </br>
