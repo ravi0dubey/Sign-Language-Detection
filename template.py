@@ -1,6 +1,8 @@
 # Purpose of Template.py is to create a folder structure of our project. Rather than manual creation it will create all folders which we will be using in our project.
 # Within each folders, it will create the filenames where we will be writing our code.
 
+# run template.py on command line to create the folder and files in it
+
 import os
 from pathlib import Path
 import logging
@@ -67,7 +69,7 @@ for filepath in list_of_files:
         os.makedirs(filedir, exist_ok=True)
         logging.info(f"Creating directory: {filedir} for the file {filename}")
 
-# if filename does not exists then it will create the filename    
+# if filename does not exists or file exists but has no code in it(filesize ==0) then it will create the filename    
     if(not os.path.exists(filename)) or (os.path.getsize(filename) == 0):
         with open(filepath, 'w') as f:
             pass
