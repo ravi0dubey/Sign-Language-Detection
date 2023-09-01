@@ -31,8 +31,16 @@ Terraform </br>
 4. setup.py file is created where we write statement so that signLanguage folder will behave as libraries </br>
 5. Exception and Logger module will handle exception and write log activities respectively</br>
 6. All common functionality like encode-decode image, reading/writing of yaml files are written in utils>main.py  </br>
-7.  ss </br>
-8.   </br>
+7. Steps to create the project. We will write code in following order for better structure </br>
+  a. Constants </br>
+  b. entity </br>
+  c. components</br>
+  d. pipeline </br>
+  e. app.py </br>
+8.
+9.
+10.    </br>
+11.   </br>
 
 
 
