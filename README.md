@@ -38,8 +38,8 @@ Terraform </br>
 
 
 ## How to run?  
-1. conda create -n sign python=3.7 -y  </br>
-2. conda activate sign </br>
+1. conda create -n signLanguage python=3.7 -y  </br>
+2. conda activate signLanguage </br>
 3. pip install -r requirements.txt </br>
 4. python main.py </br>
 5. open in browser: http://localhost:8080/ </br>
