@@ -1,3 +1,5 @@
+#  All common functionality like encode-decode image, reading/writing of yaml files are written
+
 import os.path
 import sys
 import yaml

@@ -1,3 +1,5 @@
+# Logger module which writes all log during project execution
+
 import logging
 import os
 from datetime import datetime

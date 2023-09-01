@@ -1,3 +1,5 @@
+# Additonal requirements for this project
+
 dill==0.3.5.1
 from-root==1.0.2
 notebook==7.0.0a7
@@ -6,7 +8,7 @@ mypy-boto3-s3
 flask-cors
 flask
 
-# YOLOv5 requirements
+# copied from YOLOv5 requirements.txt
 # Usage: pip install -r requirements.txt
 
 # Base ----------------------------------------
@@ -54,5 +56,5 @@ thop>=0.1.1  # FLOPs computation
 # pycocotools>=2.0  # COCO mAP
 # roboflow
 
-
+# This will search setup.py file and from there read find_packages() this will help project folder(signLanguage folder) to be interpreted by python interpreter.
 -e .
