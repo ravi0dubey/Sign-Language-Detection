@@ -12,24 +12,33 @@ list_of_files = [
     ".github/workflows/.gitkeep",
     "data/.gitkeep",
     "docs/.gitkeep",
+    # Constructor to treat module as package
     f"{project_name}/__init__.py",
+    # Different components of the Deep Learning Project 
     f"{project_name}/components/__init__.py",
     f"{project_name}/components/data_ingestion.py",
     f"{project_name}/components/data_validation.py",
     f"{project_name}/components/model_trainer.py",
     f"{project_name}/components/model_pusher.py",
+    # code for S3 bucket
     f"{project_name}/configuration/__init__.py",
     f"{project_name}/configuration/s3_operations.py",
+    # Code for constant
     f"{project_name}/constant/__init__.py",
     f"{project_name}/constant/training_pipeline/__init__.py",
     f"{project_name}/constant/application.py",
+    # Code for entity
     f"{project_name}/entity/__init__.py",
     f"{project_name}/entity/artifacts_entity.py",
     f"{project_name}/entity/config_entity.py",
+    # Code for exception
     f"{project_name}/exception/__init__.py",
+    # Code for logger
     f"{project_name}/logger/__init__.py",
+    # Code for Pipeline
     f"{project_name}/pipeline/__init__.py",
     f"{project_name}/pipeline/training_pipeline.py",
+    # Code for Utilites
     f"{project_name}/utils/__init__.py",
     f"{project_name}/utils/main_utils.py",
     "template/index.html",
