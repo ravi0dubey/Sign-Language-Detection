@@ -1,4 +1,4 @@
-# Sensor-Fault-Detection
+# End to End Sign Language Detection
 
 ## Problem Statement
 
