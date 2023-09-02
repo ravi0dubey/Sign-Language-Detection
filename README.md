@@ -44,31 +44,28 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 
 
 ## How project was build?
-1. Write template.py which create a folder structure of our project. Within each folders, it will create the filenames where we will be writing our code. </br>
-2. Clone yolov5 github repo from git  using "clone https://github.com/ultralytics/yolov5.git" and delete its .git and .gitignore folder </br>
-3. From YOLOV5 requirements.txt, copy its content into our project requirements.txt  and on top of it add addtional modules required for your project and at last add -e . which will be used by setup.py </br>
-4. setup.py file is created where we write statement so that signLanguage folder will behave as libraries </br>
-5. Exception and Logger module will handle exception and write log activities respectively</br>
+1. Write **template.p**y which create a folder structure of our project. Within each folders, it will create the filenames where we will be writing our code. </br>
+2. Clone **YOLOV5** github repo from git  using "clone https://github.com/ultralytics/yolov5.git" and delete its .git and .gitignore folder </br>
+3. From YOLOV5 requirements.txt, copy its content into our project **requirements.txt**  and on top of it add addtional modules required for your project and at last add -e . which will be used by setup.py </br>
+4. **setup.py** file is created where we write statement so that signLanguage folder will behave as libraries </br>
+5. **Exception** and **Logger** module will handle exception and write log activities respectively</br>
 6. All common functionality like encode-decode image, reading/writing of yaml files are written in utils>main.py  </br>
 7. Steps to create the project. We will write code in following order for better structure </br>
-  a. Constants-> We will first declare all constants variable to be used by each individual components in constant->training_pipeline->__init__.py  </br>
-  b. entity -> </br>
+  a. **Constants**-> We will first declare all constants variable to be used by each individual components in constant->training_pipeline->__init__.py  </br>
+  b. **entity** -> </br>
           i. We will declare dataclass for each components in entity->config_entity.py </br>
          ii. We will declare artifacts which each components will be generating in  entity->artifact_entity.py </br>
-  c. components -> </br>
-         i. Write data_ingestion.py which will fetch input sign language data from github repo, unzip it and divide images into train and test folder </br>
+  c. **components** -> </br>
+         i. Write **data_ingestion.py** which will fetch input sign language data from github repo, unzip it and divide images into train and test folder </br>
             It will return data_zile_file_path and feature_store_path as its artifact. Feature_store_path contains train(folder), test(folder) and data.yaml file  </br>
-         ii. Write data_validation.py which will read the artifacts of data_ingestion and validate that it has 3 necessary components received from data_ingestion(train, test and data.yaml file) </br>.
+         ii. Write **data_validation.py** which will read the artifacts of data_ingestion and validate that it has 3 necessary components received from data_ingestion(train, test and data.yaml file) </br>.
             It will return validation_status as its artifact </br>
         iii. Write data_ingestion.py which will fetch input sign language data and then it will  </br>
          iv. Write data_ingestion.py which will fetch input sign language data and then it will  </br>
          
-   d. pipeline -> training_pipeline.py  will call each components of the project(mentioned above) in sequence </br>
-   e. app.py -> It is the main driver part of the application which calls pipeline </br>
-9.  </br>
-10.
-11.    </br>
-12.   </br>
+   d. **pipeline **-> training_pipeline.py  will call each components of the project(mentioned above) in sequence </br>
+   e. **app.py** -> It is the main driver part of the application which calls pipeline </br>
+
 
 
 
@@ -83,6 +80,10 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 ![image](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/143f79e9-3fe8-489a-adb1-c00bde7f4ea5)
 
 #### Data Validation 
+ 1. Data Valiation will read train,test and data.yaml files from data ingestion phase. </br>
+ 2. It will perform validation of data and store results of validation in status.txt file. </br>
+ 3. If validation status = True then we are copying Sign_Language_data.zip folder in main project directory which will be used during model training </br>
+ 
 ![Data validation](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/0b4b4daa-55f8-42ac-a01c-54bc2aa7c238)
 
 #### Folder structure of Artifact which gets created on running Training Pipeline for Data Validation
