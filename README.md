@@ -58,7 +58,7 @@ Sign language annotated data is kept in github repository: https://github.com/ra
   c. components</br>
   d. pipeline </br>
   e. app.py </br>
-9. 
+9.  </br>
 10.
 11.    </br>
 12.   </br>
