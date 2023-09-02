@@ -51,15 +51,17 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 5. Exception and Logger module will handle exception and write log activities respectively</br>
 6. All common functionality like encode-decode image, reading/writing of yaml files are written in utils>main.py  </br>
 7. Steps to create the project. We will write code in following order for better structure </br>
-  a. Constants </br>
-  b. entity </br>
+  a. Constants-> We will first declare all constants variable to be used by each individual components in constant->training_pipeline->__init__.py  </br>
+  b. entity -> </br>
+       i. We will declare dataclass for each components in entity->config_entity.py</br>
+      ii. We will declare artifacts which each components will be generating in  entity->artifact_entity.py</br>
   c. components</br>
   d. pipeline </br>
   e. app.py </br>
-8.
-9.
-10.    </br>
-11.   </br>
+9. 
+10.
+11.    </br>
+12.   </br>
 
 ## Approach while doing the coding
 ![image](https://user-images.githubusercontent.com/38419795/226114307-71505cd5-8bb4-44fb-b0e1-1e28a5b045ec.png)
