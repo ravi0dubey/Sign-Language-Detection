@@ -13,8 +13,8 @@ from signLanguage.entity.artifact_entity import DataIngestionArtifact, DataValid
 class DataValidation:
     def __init__(
         self,
-        data_ingestion_artifact: DataIngestionArtifact = DataIngestionArtifact(),
-        data_validation_config: DataValidationConfig = DataValidationConfig(),
+        data_ingestion_artifact: DataIngestionArtifact ,
+        data_validation_config: DataValidationConfig ,
         ) :
         try:
             self.data_ingestion_artifact = data_ingestion_artifact
@@ -30,7 +30,7 @@ class DataValidation:
             # it will pass False if we do not have anyone of the files from the mentioned file list
             # it will pass True  if we have all files from the mentioned file list
             validation_status = None
-            all_files = os.list_dir(self.data_ingestion_artifact.feature_store_path)
+            all_files = os.listdir(self.data_ingestion_artifact.feature_store_path)
             for file in all_files:
                 if file not in self.data_validation_config.required_file_list:
                     validation_status = False
