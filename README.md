@@ -53,10 +53,10 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 7. Steps to create the project. We will write code in following order for better structure </br>
   a. Constants-> We will first declare all constants variable to be used by each individual components in constant->training_pipeline->__init__.py  </br>
   b. entity -> </br>
-          i. We will declare dataclass for each components in entity->config_entity.py</br>
-         ii. We will declare artifacts which each components will be generating in  entity->artifact_entity.py</br>
+          i. We will declare dataclass for each components in entity->config_entity.py </br>
+         ii. We will declare artifacts which each components will be generating in  entity->artifact_entity.py </br>
   c. components -> </br>
-         i. Write data_ingestion.py which will fetch input sign language data from github repo, unzip it and divide images into train and test folder</br>
+         i. Write data_ingestion.py which will fetch input sign language data from github repo, unzip it and divide images into train and test folder </br>
             It will return data_zile_file_path and feature_store_path as its artifact. Feature_store_path contains train(folder), test(folder) and data.yaml file  </br>
          ii. Write data_validation.py which will read the artifacts of data_ingestion and validate that it has 3 necessary components received from data_ingestion(train, test and data.yaml file) </br>.
             It will return validation_status as its artifact </br>
@@ -86,6 +86,8 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 ![Data validation](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/0b4b4daa-55f8-42ac-a01c-54bc2aa7c238)
 
 ## Folder structure of Artifact which gets created on running Training Pipeline for Data Validation
+![image](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/d98cf223-0508-43f1-98a2-808800288301)
+
 
 #### Model Trainer
 ![image](https://user-images.githubusercontent.com/38419795/228225084-3daabd37-dc7d-41c5-89a7-362516e59108.png)
