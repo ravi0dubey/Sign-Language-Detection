@@ -55,9 +55,16 @@ Sign language annotated data is kept in github repository: https://github.com/ra
   b. entity -> </br>
           i. We will declare dataclass for each components in entity->config_entity.py</br>
          ii. We will declare artifacts which each components will be generating in  entity->artifact_entity.py</br>
-  c. components</br>
-  d. pipeline </br>
-  e. app.py </br>
+  c. components -> </br>
+         i. Write data_ingestion.py which will fetch input sign language data from github repo, unzip it and divide images into train and test folder</br>
+            It will return data_zile_file_path and feature_store_path as its artifact. Feature_store_path contains train(folder), test(folder) and data.yaml file  </br>
+         ii. Write data_validation.py which will read the artifacts of data_ingestion and validate that it has 3 necessary components received from data_ingestion(train, test and data.yaml file) </br>.
+            It will return validation_status as its artifact </br>
+        iii. Write data_ingestion.py which will fetch input sign language data and then it will  </br>
+         iv. Write data_ingestion.py which will fetch input sign language data and then it will  </br>
+         
+  d. pipeline -> training_pipeline.py  will call each components of the project(mentioned above) in sequence </br>
+  e. app.py -> It is the main driver part of the application which calls pipeline </br>
 9.  </br>
 10.
 11.    </br>
