@@ -63,8 +63,8 @@ Sign language annotated data is kept in github repository: https://github.com/ra
         iii. Write data_ingestion.py which will fetch input sign language data and then it will  </br>
          iv. Write data_ingestion.py which will fetch input sign language data and then it will  </br>
          
-  d. pipeline -> training_pipeline.py  will call each components of the project(mentioned above) in sequence </br>
-  e. app.py -> It is the main driver part of the application which calls pipeline </br>
+   d. pipeline -> training_pipeline.py  will call each components of the project(mentioned above) in sequence </br>
+   e. app.py -> It is the main driver part of the application which calls pipeline </br>
 9.  </br>
 10.
 11.    </br>
@@ -76,16 +76,16 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 ## Training Pipeline
 
 
-## Data Ingestion pipeline
+#### Data Ingestion pipeline
 ![Data Ingestion](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/b9ba1b27-9268-4f20-95f3-2b38dc4f6154)
 
-## Folder structure of Artifact which gets created on running Training Pipeline for Data Ingestion
+#### Folder structure of Artifact which gets created on running Training Pipeline for Data Ingestion
 ![image](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/143f79e9-3fe8-489a-adb1-c00bde7f4ea5)
 
-## Data Validation 
+#### Data Validation 
 ![Data validation](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/0b4b4daa-55f8-42ac-a01c-54bc2aa7c238)
 
-## Folder structure of Artifact which gets created on running Training Pipeline for Data Validation
+#### Folder structure of Artifact which gets created on running Training Pipeline for Data Validation
 ![image](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/d98cf223-0508-43f1-98a2-808800288301)
 
 
