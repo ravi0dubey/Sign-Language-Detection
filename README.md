@@ -94,27 +94,14 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 ![Model trainer](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/b56eabbe-4b6e-42d4-b613-0229ddbf2b56)
 
 #### Folder structure of Artifact which gets created on running Training Pipeline for Model Trainer
+![image](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/09617b89-05bb-4ea7-b6a0-0c23278e7ec3)
 
-
-#### Model Evaluation
-Models will be stored in timestamp folder \n
-![image](https://user-images.githubusercontent.com/38419795/227789015-c9e7434a-5a76-4977-b53a-9929721f8231.png)
 
 #### Model Pusher
 ![image](https://user-images.githubusercontent.com/38419795/228396989-a72568fa-f190-4694-aa3e-6579f29ccb71.png)
 
 #### Saved Model Path
 ![image](https://user-images.githubusercontent.com/38419795/228519585-222ceb72-cb9f-4929-bc50-9169bb4ed4b3.png)
-
-
-## Data Drift Detection
-![image](https://user-images.githubusercontent.com/38419795/226199171-c98ae16f-5007-484e-b5f9-5b3d3e73cc92.png)
-
-## Concept Drift Detection
-![image](https://user-images.githubusercontent.com/38419795/226199601-27d1bf75-0556-4275-9c53-21bef8891f66.png)
-
-## Target Drift Detection
-![image](https://user-images.githubusercontent.com/38419795/226200126-e31f41e5-c791-43f7-8a57-4df7700a3cce.png)
 
 
 
