@@ -54,7 +54,7 @@ Sign language annotated data is kept in github repository: https://github.com/ra
   a. **Constants**-> We will first declare all constants variable to be used by each individual components in constant->training_pipeline->__init__.py  </br>
   b. **entity** -> </br>
           i. We will declare dataclass for each components in entity->config_entity.py </br>
-         ii. We will declare artifacts which each components will be generating in  entity->artifact_entity.py </br>
+              ii. We will declare artifacts which each components will be generating in  entity->artifact_entity.py </br>
   c. **components** -> </br>
          i. Write **data_ingestion.py** which will fetch input sign language data from github repo, unzip it and divide images into train and test folder </br>
             It will return data_zile_file_path and feature_store_path as its artifact. Feature_store_path contains train(folder), test(folder) and data.yaml file  </br>
@@ -63,7 +63,7 @@ Sign language annotated data is kept in github repository: https://github.com/ra
         iii. Write data_ingestion.py which will fetch input sign language data and then it will  </br>
          iv. Write data_ingestion.py which will fetch input sign language data and then it will  </br>
          
-   d. **pipeline **-> training_pipeline.py  will call each components of the project(mentioned above) in sequence </br>
+   d. **pipeline->training_pipeline.py** will call each components of the project(mentioned above) in sequence </br>
    e. **app.py** -> It is the main driver part of the application which calls pipeline </br>
 
 
@@ -91,7 +91,9 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 
 
 #### Model Trainer
-![image](https://user-images.githubusercontent.com/38419795/228225084-3daabd37-dc7d-41c5-89a7-362516e59108.png)
+![Model trainer](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/b56eabbe-4b6e-42d4-b613-0229ddbf2b56)
+
+#### Folder structure of Artifact which gets created on running Training Pipeline for Model Trainer
 
 
 #### Model Evaluation
