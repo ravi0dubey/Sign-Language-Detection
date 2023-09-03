@@ -25,7 +25,7 @@ Git Actions </br>
 Terraform </br>
 
 
-## How to run?  
+## How to run  
 1. conda create -n signLanguage python=3.7 -y  </br>
 2. conda activate signLanguage </br>
 3. pip install -r requirements.txt </br>
@@ -43,7 +43,7 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 ![deployment](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/19351f34-e3d7-4e98-967c-656075a9a87a)
 
 
-## How project was build?
+## How project was build
 1. Write **template.p**y which create a folder structure of our project. Within each folders, it will create the filenames where we will be writing our code. </br>
 2. Clone **YOLOV5** github repo from git  using "clone https://github.com/ultralytics/yolov5.git" and delete its .git and .gitignore folder </br>
 3. From YOLOV5 requirements.txt, copy its content into our project **requirements.txt**  and on top of it add addtional modules required for your project and at last add -e . which will be used by setup.py </br>
@@ -53,15 +53,15 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 7. Steps to create the project. We will write code in following order for better structure </br>
   a. **Constants**-> We will first declare all constants variable to be used by each individual components in constant->training_pipeline->__init__.py  </br> </br>
   b. **entity** -> </br>
-          i. We will declare dataclass for each components in entity->config_entity.py </br>
+              i. We will declare dataclass for each components in entity->config_entity.py </br>
               ii. We will declare artifacts which each components will be generating in  entity->artifact_entity.py </br> </br>
   c. **components** -> </br>
-         i. Write **data_ingestion.py** which will fetch input sign language data from github repo, unzip it and divide images into train and test folder </br>
+          i. **data_ingestion.py**  will fetch input sign language data from github repo, unzip it and divide images into train and test folder </br>
             It will return data_zile_file_path and feature_store_path as its artifact. Feature_store_path contains train(folder), test(folder) and data.yaml file  </br>
-         ii. Write **data_validation.py** which will read the artifacts of data_ingestion and validate that it has 3 necessary components received from data_ingestion(train, test and data.yaml file) </br>.
+         ii. **data_validation.py** which will read the artifacts of data_ingestion and validate that it has 3 necessary components received from data_ingestion(train, test and data.yaml file) </br>.
             It will return validation_status as its artifact </br>
-        iii. Write data_ingestion.py which will fetch input sign language data and then it will  </br>
-         iv. Write data_ingestion.py which will fetch input sign language data and then it will  </br> </br>
+        iii. **model_trainer.py** If validation status from data_validation.py is True then it will download the modelweights from YOLOV5S will fetch input sign language data and then it will  </br>
+         iv. **model_pusher.py** which will fetch input sign language data and then it will  </br> </br>
          
    d. **pipeline->training_pipeline.py** will call each components of the project(mentioned above) in sequence </br> </br>
    e. **app.py** -> It is the main driver part of the application which calls pipeline </br>
