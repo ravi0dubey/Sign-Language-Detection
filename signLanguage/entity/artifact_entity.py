@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 
 
-
 @dataclass
 class DataIngestionArtifact:
     data_zip_file_path:str
@@ -10,4 +9,7 @@ class DataIngestionArtifact:
 @dataclass
 class DataValidationArtifact:
     validation_status:bool
-    
+
+@dataclass
+class ModelTrainerArtifact:
+    trained_model_file_path: str

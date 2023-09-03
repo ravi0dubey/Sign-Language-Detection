@@ -1,5 +1,6 @@
 # Data Valiation will read train,test and data.yaml files from data ingestion phase.
 # It will perform validation of data and store results of validation in status.txt file.
+# If validation status = True then we are copying Sign_Language_data.zip folder in main project directory which will be used during model training
 
 import os
 import sys
@@ -11,11 +12,7 @@ from signLanguage.entity.artifact_entity import DataIngestionArtifact, DataValid
 
 
 class DataValidation:
-    def __init__(
-        self,
-        data_ingestion_artifact: DataIngestionArtifact ,
-        data_validation_config: DataValidationConfig ,
-        ) :
+    def __init__(self,data_ingestion_artifact: DataIngestionArtifact,data_validation_config: DataValidationConfig ,) :
         try:
             self.data_ingestion_artifact = data_ingestion_artifact
             self.data_validation_config = data_validation_config
@@ -54,7 +51,7 @@ class DataValidation:
             data_validation_artifact = DataValidationArtifact( validation_status = status,   )
             logging.info("Exited initiate_data_validation method of Data_Validation class")
             logging.info(f"Data validation artifact: {data_validation_artifact}")
-             # 
+            # If validation status = True then we are copying Sign_Language_data.zip folder in project directory which will be used during model training
             if status:
                 shutil.copy(self.data_ingestion_artifact.data_zip_file_path,os.getcwd())
             return data_validation_artifact

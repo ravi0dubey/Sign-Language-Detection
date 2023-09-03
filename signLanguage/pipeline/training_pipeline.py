@@ -5,15 +5,17 @@ from signLanguage.logger import logging
 from signLanguage.exception import SignException
 from signLanguage.components.data_ingestion import DataIngestion
 from signLanguage.components.data_validation import DataValidation
-from signLanguage.entity.config_entity import (DataIngestionConfig, DataValidationConfig)
-from signLanguage.entity.artifact_entity import (DataIngestionArtifact,DataValidationArtifact)
+from signLanguage.components.model_trainer import ModelTrainer
+from signLanguage.entity.config_entity import (DataIngestionConfig, DataValidationConfig,ModelTrainerConfig)
+from signLanguage.entity.artifact_entity import (DataIngestionArtifact,DataValidationArtifact,ModelTrainerArtifact)
+
 
 
 class TrainPipeline:
-    # data components configuration declaration
     def __init__(self):
         self.data_ingestion_config  = DataIngestionConfig()
         self.data_validation_config = DataValidationConfig()
+        self.model_trainer_config   = ModelTrainerConfig()
 
     # data ingestion class takes data ingestion configuration and data ingestion will get initiated 
     def start_data_ingestion(self)-> DataIngestionArtifact:
@@ -40,13 +42,33 @@ class TrainPipeline:
         except Exception as e:
             raise SignException(e, sys)
 
+    
+    def start_model_trainer(self) -> ModelTrainerArtifact:
+        try:
+            logging.info("Entered the start_model_trainer method of TrainPipeline class")
+            model_trainer = ModelTrainer(model_trainer_config=self.model_trainer_config,)
+            model_trainer_artifact = model_trainer.initiate_model_trainer()
+            logging.info("Performed the model training operations")
+            logging.info("Exited the start_model_trainer method of TrainPipeline class")
+            return model_trainer_artifact
+
+        except Exception as e:
+            raise SignException(e, sys)
+
+
+
+
+
+
+
     # main run pipeline which gets called from app.py
     # it calls all phases of the project one after another
     def run_pipeline(self) -> None:
         try:
             data_ingestion_artifact = self.start_data_ingestion()
             data_validation_artifact = self.start_data_validation(data_ingestion_artifact= data_ingestion_artifact)
-        
+            if data_validation_artifact.validation_status == True:
+                model_trainer_artifact = self.start_model_trainer()
         except Exception as e:
             raise SignException(e, sys)
 

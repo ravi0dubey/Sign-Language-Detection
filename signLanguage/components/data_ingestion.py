@@ -1,7 +1,7 @@
 import os
 import sys
 
-# urllib is used to download the data
+# urllib is used to download the data from the github repository
 from six.moves import urllib
 import zipfile
 from signLanguage.logger import logging
@@ -12,7 +12,7 @@ from signLanguage.entity.artifact_entity import DataIngestionArtifact
 
 
 class DataIngestion:
-    def __init__(self, data_ingestion_config: DataIngestionConfig = DataIngestionConfig()):
+    def __init__(self, data_ingestion_config: DataIngestionConfig):    
         try:
             self.data_ingestion_config = data_ingestion_config
         except Exception as e:
@@ -21,10 +21,7 @@ class DataIngestion:
 
     
     def download_data(self)-> str:
-        '''
-        Fetch data from the url
-        '''
-
+        # Fetch data from the url     
         try: 
             # it will setup data ingestion directory path and then directory will be created
             zip_download_dir = self.data_ingestion_config.data_ingestion_dir
