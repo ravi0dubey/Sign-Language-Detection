@@ -1,7 +1,0 @@
-aws-access-key-id     : AKIAQ66RNRDQPDK2VXXQ
-aws-secret-access-key : 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
-aws-region            : us-east-1
-user                  : sign-lang23-user
-ecr name              : sign-lang23-repository
-ecr uri               : 066474313952.dkr.ecr.us-east-1.amazonaws.com
-bucket                : sign-lang23-bucket
