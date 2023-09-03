@@ -100,9 +100,10 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 #### Model Pusher
 ![Model Pusher](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/213ee1e0-00ce-4a06-8370-e1411b05aab1)
 
+#### Model best.pt getting saved in S3 bucket
+![image](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/8ea98aea-c32d-4478-a6b4-e85797990e33)
 
-#### Saved Model Path
-![image](https://user-images.githubusercontent.com/38419795/228519585-222ceb72-cb9f-4929-bc50-9169bb4ed4b3.png)
+
 
 
 
