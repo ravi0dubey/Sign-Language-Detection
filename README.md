@@ -51,19 +51,19 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 5. **Exception** and **Logger** module will handle exception and write log activities respectively</br>
 6. All common functionality like encode-decode image, reading/writing of yaml files are written in utils>main.py  </br>
 7. Steps to create the project. We will write code in following order for better structure </br>
-  a. **Constants**-> We will first declare all constants variable to be used by each individual components in constant->training_pipeline->__init__.py  </br>
+  a. **Constants**-> We will first declare all constants variable to be used by each individual components in constant->training_pipeline->__init__.py  </br> </br>
   b. **entity** -> </br>
           i. We will declare dataclass for each components in entity->config_entity.py </br>
-              ii. We will declare artifacts which each components will be generating in  entity->artifact_entity.py </br>
+              ii. We will declare artifacts which each components will be generating in  entity->artifact_entity.py </br> </br>
   c. **components** -> </br>
          i. Write **data_ingestion.py** which will fetch input sign language data from github repo, unzip it and divide images into train and test folder </br>
             It will return data_zile_file_path and feature_store_path as its artifact. Feature_store_path contains train(folder), test(folder) and data.yaml file  </br>
          ii. Write **data_validation.py** which will read the artifacts of data_ingestion and validate that it has 3 necessary components received from data_ingestion(train, test and data.yaml file) </br>.
             It will return validation_status as its artifact </br>
         iii. Write data_ingestion.py which will fetch input sign language data and then it will  </br>
-         iv. Write data_ingestion.py which will fetch input sign language data and then it will  </br>
+         iv. Write data_ingestion.py which will fetch input sign language data and then it will  </br> </br>
          
-   d. **pipeline->training_pipeline.py** will call each components of the project(mentioned above) in sequence </br>
+   d. **pipeline->training_pipeline.py** will call each components of the project(mentioned above) in sequence </br> </br>
    e. **app.py** -> It is the main driver part of the application which calls pipeline </br>
 
 
