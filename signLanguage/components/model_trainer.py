@@ -13,16 +13,17 @@ class ModelTrainer:
         except Exception as e:
            raise SignException(e, sys)
 
+
     # model training folder which performs the training of the model
     def initiate_model_trainer(self,) -> ModelTrainerArtifact:
         logging.info("Entered initiate_model_trainer method of ModelTrainer class")
         try:
-            # unzipping of sign language data 
+            # unzipping of sign language data and then removing the zip file
             logging.info("Unzipping data")
             os.system("unzip Sign_language_data.zip")
             os.system("rm Sign_language_data.zip")
 
-            # data.yaml is read to figure out the number of classes we have in sign language daga    
+            # data.yaml is read to figure out the number of classes we have in sign language data    
             with open("data.yaml", 'r') as stream:
                 num_classes = str(yaml.safe_load(stream)['nc'])
             

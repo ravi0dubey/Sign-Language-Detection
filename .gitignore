@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 artifacts/*
 Sign_language_data.zip
+sign-lang23-user_accessKeys.csv
+aws-setup-details

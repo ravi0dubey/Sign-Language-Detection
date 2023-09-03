@@ -6,8 +6,10 @@ from signLanguage.exception import SignException
 from signLanguage.components.data_ingestion import DataIngestion
 from signLanguage.components.data_validation import DataValidation
 from signLanguage.components.model_trainer import ModelTrainer
-from signLanguage.entity.config_entity import (DataIngestionConfig, DataValidationConfig,ModelTrainerConfig)
-from signLanguage.entity.artifact_entity import (DataIngestionArtifact,DataValidationArtifact,ModelTrainerArtifact)
+from signLanguage.components.model_pusher import ModelPusher
+from signLanguage.configuration.s3_operations import S3Operation
+from signLanguage.entity.config_entity import (DataIngestionConfig, DataValidationConfig,ModelTrainerConfig,ModelPusherConfig)
+from signLanguage.entity.artifact_entity import (DataIngestionArtifact,DataValidationArtifact,ModelTrainerArtifact,ModelPusherArtifacts)
 
 
 
@@ -16,6 +18,9 @@ class TrainPipeline:
         self.data_ingestion_config  = DataIngestionConfig()
         self.data_validation_config = DataValidationConfig()
         self.model_trainer_config   = ModelTrainerConfig()
+        self.model_pusher_config   = ModelPusherConfig()
+        self.s3_operations = S3Operation()
+
 
     # data ingestion class takes data ingestion configuration and data ingestion will get initiated 
     def start_data_ingestion(self)-> DataIngestionArtifact:
@@ -43,6 +48,7 @@ class TrainPipeline:
             raise SignException(e, sys)
 
     
+    # Model trainer class takes model trainer configuration and model trainer function gets initiated
     def start_model_trainer(self) -> ModelTrainerArtifact:
         try:
             logging.info("Entered the start_model_trainer method of TrainPipeline class")
@@ -51,24 +57,34 @@ class TrainPipeline:
             logging.info("Performed the model training operations")
             logging.info("Exited the start_model_trainer method of TrainPipeline class")
             return model_trainer_artifact
+        except Exception as e:
+            raise SignException(e, sys)
 
+    
+    # Model pusher class takes model pusher configuration, model_trainer artifact and s3 operations and model pusher function gets initiated
+    def start_model_pusher(self, model_trainer_artifact: ModelTrainerArtifact, s3: S3Operation):
+        try:
+            logging.info("Entered the start_model_pusher method of TrainPipeline class")
+            model_pusher = ModelPusher(model_pusher_config=self.model_pusher_config,model_trainer_artifact= model_trainer_artifact,s3=s3)                         
+            model_pusher_artifact = model_pusher.initiate_model_pusher()
+            logging.info("Performed the model pushing operations")
+            logging.info("Exited the start_model_pusher method of TrainPipeline class")
+            return model_pusher_artifact
         except Exception as e:
             raise SignException(e, sys)
 
 
 
-
-
-
-
     # main run pipeline which gets called from app.py
     # it calls all phases of the project one after another
+    # model trainer and model pusher will only be called once validation status is set to true
     def run_pipeline(self) -> None:
         try:
             data_ingestion_artifact = self.start_data_ingestion()
             data_validation_artifact = self.start_data_validation(data_ingestion_artifact= data_ingestion_artifact)
             if data_validation_artifact.validation_status == True:
                 model_trainer_artifact = self.start_model_trainer()
+                model_pusher_artifact  = self.start_model_pusher(model_trainer_artifact= model_trainer_artifact,s3=self.s3_operations)
         except Exception as e:
             raise SignException(e, sys)
 
