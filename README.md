@@ -120,7 +120,8 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 
 #### Docker image in ECR
 
-![image](https://github.com/ravi0dubey/Sensor-Fault-Detection/assets/38419795/9440c21b-b466-4076-8ef8-2034de278b3f)
+![image](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/4ed95417-642b-410a-b8a8-005522f932e3)
+
 
 
 
