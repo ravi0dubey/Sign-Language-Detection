@@ -98,7 +98,8 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 
 
 #### Model Pusher
-![image](https://user-images.githubusercontent.com/38419795/228396989-a72568fa-f190-4694-aa3e-6579f29ccb71.png)
+![Model Pusher](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/213ee1e0-00ce-4a06-8370-e1411b05aab1)
+
 
 #### Saved Model Path
 ![image](https://user-images.githubusercontent.com/38419795/228519585-222ceb72-cb9f-4929-bc50-9169bb4ed4b3.png)
