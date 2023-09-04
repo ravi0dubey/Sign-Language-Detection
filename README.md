@@ -54,24 +54,24 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 5. **Exception** and **Logger** module will handle exception and write log activities respectively</br>
 6. All common functionality like encode-decode image, reading/writing of yaml files are written in utils>main.py  </br>
 7. Steps to create the project. We will write code in following order for better structure </br>
-  a. **Constants**-> We will first declare all constants variable to be used by each individual components in constant->training_pipeline->__init__.py  </br> </br>
-  b. **entity** -> </br>
+  a. **Constants ->** We will first declare all constants variable to be used by each individual components in constant->training_pipeline->__init__.py  </br> </br>
+  b. **entity ->**  </br>
               i. We will declare dataclass for each components in entity->config_entity.py </br>
               ii. We will declare artifacts which each components will be generating in  entity->artifact_entity.py </br> </br>
-  c. **configurations->s3_operations.py** It has **upload_file** method to push the model to s3 bucket based on the s3-bucket name declared in the project  </br> </br>
-  d. **components** -> </br>
-          i. **data_ingestion.py**  will fetch input sign language data from github repo, unzip it and divide images into train and test folder </br>
+  c. **configurations->s3_operations.py ->** It has **upload_file** method to push the model to s3 bucket based on the s3-bucket name declared in the project  </br> </br>
+  d. **components ->**  </br>
+          i. **data_ingestion.py ->**  will fetch input sign language data from github repo, unzip it and divide images into train and test folder </br>
             It will return data_zile_file_path and feature_store_path as its artifact. Feature_store_path contains train(folder), test(folder) and data.yaml file  </br>
-         ii. **data_validation.py** which will read the artifacts of data_ingestion and validate that it has 3 necessary components received from data_ingestion(train, test and data.yaml file) </br>.
+         ii. **data_validation.py ->** which will read the artifacts of data_ingestion and validate that it has 3 necessary components received from data_ingestion(train, test and data.yaml file) </br>.
             It will return validation_status as its artifact </br>
-        iii. **model_trainer.py** If validation status from data_validation.py is True then it will download the modelweights from YOLOV5S and it will train the model on the sign language data using the number of epochs mentioned. I have trained using 300 epochs</br>
-         iv. **model_pusher.py** If validation status from data_validation.py is True then it will call upload_file method of configurations-> s3_operations.py to push the trained model best.pt to **S3 bucket** for future usage  </br> </br>
+        iii. **model_trainer.py ->** If validation status from data_validation.py is True then it will download the modelweights from YOLOV5S and it will train the model on the sign language data using the number of epochs mentioned. I have trained using 300 epochs</br>
+         iv. **model_pusher.py ->** If validation status from data_validation.py is True then it will call upload_file method of configurations-> s3_operations.py to push the trained model best.pt to **S3 bucket** for future usage  </br> </br>
          
-   e. **pipeline** </br>
+   e. **pipeline ->** </br>
       i. **application.py** -> it stores the configuration of host and port number on which the project will run </br></br>
-     ii. **training_pipeline.py** will call each components of the project(mentioned above) in sequence </br> </br>
+     ii. **training_pipeline.py ->** will call each components of the project(mentioned above) in sequence </br> </br>
    
-   f. **app.py** -> It is the main driver part of the application which calls the pipeline for training and prediction </br>
+   f. **app.py ->**  It is the main driver part of the application which calls the pipeline for training and prediction </br>
 
 
 
