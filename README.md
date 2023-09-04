@@ -35,6 +35,18 @@ Terraform </br>
 7. To do the sign language prediction, live, change the url in the browser to : http://localhost:8080/train/live </br>
 6. To the train the model change the url in the browser to : http://localhost:8080/train </br>
 
+## Sign Language Project run results
+1. Static image sign language detection
+   ![image](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/bde44573-f1ba-4f29-81f7-fc4b93b0998e)
+2. Live sign language detection</br>
+  
+3. Training of Model </br>
+![image](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/ecf6518a-8172-4346-98ba-e66ea30ae905)
+
+
+
+   
+
 ## Input Data for training the model
 
 Sign language annotated data is kept in github repository: https://github.com/ravi0dubey/Dataset/raw/main/Sign_language_data.zip
