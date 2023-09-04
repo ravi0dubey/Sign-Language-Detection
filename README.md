@@ -60,8 +60,9 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 ## Deployment Architecture
 ![deployment](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/19351f34-e3d7-4e98-967c-656075a9a87a)
  
- Details of setting up AWS for the deployment can be found in below link </br>
- https://medium.com/@ravi0dubey/data-science-model-deployment-to-aws-2903efa0ac3
+## Details of setting up AWS for the deployment can be found in below link </br>
+
+https://medium.com/@ravi0dubey/data-science-model-deployment-to-aws-2903efa0ac3   
 
 ## How project was designed and build
 1. Write **template.p**y which create a folder structure of our project. Within each folders, it will create the filenames where we will be writing our code. </br>
