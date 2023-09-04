@@ -38,10 +38,13 @@ Terraform </br>
 ## Sign Language Project run results
 1. Static image sign language detection
    ![image](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/bde44573-f1ba-4f29-81f7-fc4b93b0998e)
+
 2. Live sign language detection</br>
   
 3. Training of Model </br>
-![image](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/ecf6518a-8172-4346-98ba-e66ea30ae905)
+![image](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/4d05d736-e09e-46c7-a085-e084ba452cdc)
+
+
 
 
 
