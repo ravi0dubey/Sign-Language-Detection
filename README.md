@@ -31,8 +31,11 @@ Terraform </br>
 3. pip install -r requirements.txt </br>
 4. python main.py </br>
 5. open in browser: http://localhost:8080/ </br>
+6. To do the object detection for a static image upload the image and it will predict the sign language </br>
+7. To do the sign language prediction, live, change the url in the browser to : http://localhost:8080/train/live </br>
+6. To the train the model change the url in the browser to : http://localhost:8080/train </br>
 
-## Data Storage
+## Input Data for training the model
 
 Sign language annotated data is kept in github repository: https://github.com/ravi0dubey/Dataset/raw/main/Sign_language_data.zip
 
@@ -43,7 +46,7 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 ![deployment](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/19351f34-e3d7-4e98-967c-656075a9a87a)
 
 
-## How project was build
+## How project was designed and build
 1. Write **template.p**y which create a folder structure of our project. Within each folders, it will create the filenames where we will be writing our code. </br>
 2. Clone **YOLOV5** github repo from git  using "clone https://github.com/ultralytics/yolov5.git" and delete its .git and .gitignore folder </br>
 3. From YOLOV5 requirements.txt, copy its content into our project **requirements.txt**  and on top of it add addtional modules required for your project and at last add -e . which will be used by setup.py </br>
@@ -55,23 +58,26 @@ Sign language annotated data is kept in github repository: https://github.com/ra
   b. **entity** -> </br>
               i. We will declare dataclass for each components in entity->config_entity.py </br>
               ii. We will declare artifacts which each components will be generating in  entity->artifact_entity.py </br> </br>
-  c. **components** -> </br>
+  c. **configurations->s3_operations.py** It has **upload_file** method to push the model to s3 bucket based on the s3-bucket name declared in the project  </br> </br>
+  d. **components** -> </br>
           i. **data_ingestion.py**  will fetch input sign language data from github repo, unzip it and divide images into train and test folder </br>
             It will return data_zile_file_path and feature_store_path as its artifact. Feature_store_path contains train(folder), test(folder) and data.yaml file  </br>
          ii. **data_validation.py** which will read the artifacts of data_ingestion and validate that it has 3 necessary components received from data_ingestion(train, test and data.yaml file) </br>.
             It will return validation_status as its artifact </br>
-        iii. **model_trainer.py** If validation status from data_validation.py is True then it will download the modelweights from YOLOV5S will fetch input sign language data and then it will  </br>
-         iv. **model_pusher.py** which will fetch input sign language data and then it will  </br> </br>
+        iii. **model_trainer.py** If validation status from data_validation.py is True then it will download the modelweights from YOLOV5S and it will train the model on the sign language data using the number of epochs mentioned. I have trained using 300 epochs</br>
+         iv. **model_pusher.py** If validation status from data_validation.py is True then it will call upload_file method of configurations-> s3_operations.py to push the trained model best.pt to **S3 bucket** for future usage  </br> </br>
          
-   d. **pipeline->training_pipeline.py** will call each components of the project(mentioned above) in sequence </br> </br>
-   e. **app.py** -> It is the main driver part of the application which calls pipeline </br>
+   e. **pipeline** </br>
+      i. **application.py** -> it stores the configuration of host and port number on which the project will run </br></br>
+     ii. **training_pipeline.py** will call each components of the project(mentioned above) in sequence </br> </br>
+   
+   f. **app.py** -> It is the main driver part of the application which calls the pipeline for training and prediction </br>
 
 
 
 
 
 ## Training Pipeline
-
 
 #### Data Ingestion pipeline
 ![Data Ingestion](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/b9ba1b27-9268-4f20-95f3-2b38dc4f6154)
@@ -80,10 +86,7 @@ Sign language annotated data is kept in github repository: https://github.com/ra
 ![image](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/143f79e9-3fe8-489a-adb1-c00bde7f4ea5)
 
 #### Data Validation 
- 1. Data Valiation will read train,test and data.yaml files from data ingestion phase. </br>
- 2. It will perform validation of data and store results of validation in status.txt file. </br>
- 3. If validation status = True then we are copying Sign_Language_data.zip folder in main project directory which will be used during model training </br>
- 
+
 ![Data validation](https://github.com/ravi0dubey/Sign-Language-Detection/assets/38419795/0b4b4daa-55f8-42ac-a01c-54bc2aa7c238)
 
 #### Folder structure of Artifact which gets created on running Training Pipeline for Data Validation
