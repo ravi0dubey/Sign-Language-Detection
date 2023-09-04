@@ -136,7 +136,7 @@ class S3Operation:
             logging.info("Exited the create_folder method of S3Operations class")
 
 
-    # upload_file function is used in our sign language project which will upload the from_filename file to bucket_name bucket with to_filename as bucket filename
+    # upload_file method is used in our sign language project which will upload the from_filename file to bucket_name bucket with to_filename as bucket filename
     # It takes following as input
     # from_filename = model_trainer_file_path in our case it is dynamic which gets stored in artifacts -> timestamp-> model_Trainer folder when  pipeline runs
     # to_filename   = file name in our case "best.pt"
